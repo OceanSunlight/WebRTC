@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>WebRtc Client</title>
+<script src="adapter.js"></script>
+<script src="peerconnection.js"></script>
+<script src="communication_server.js"></script>
+</head>
+<body>
+Server: <input type="text" id="server" value="http://10.130.66.16:8888" /><br>
+<input type="checkbox" id="loopback" title = "Just send received messages right back."/> Loopback
+<input type="checkbox" id="chatmode" checked="checked" title = "Chatting messages are spread out."/> ChatMode<br>
+Your name: <input type="text" id="local" value="my_name"/>
+<button id="connect" onclick="connect();">Connect</button>
+<button disabled="true" id="disconnect"
+        onclick="disconnect();">Disconnect</button>
+<br>
+<table><tr><td>
+Target peer id: <input type="text" id="peer_id" size="3"/></td><td>
+Message: <input type="text" id="message"/></td><td>
+<button disabled="true" id="send" onclick="send();">Send</button>
+</td></tr></table>
+<button onclick="document.getElementById('debug').innerHTML='';">
+Clear log</button>
+<button id="btn1" onclick="start()">Call</button>
+<button id="btn3" onclick="stop()">Hang Up</button>
+<pre id="videos">
+</pre>
+<pre id="debug">
+</pre>
+<br><hr>
+</body>
+</html>
